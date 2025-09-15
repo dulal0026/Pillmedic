@@ -1,0 +1,82 @@
+# Xcode
+xcuserdata/
+DerivedData/
+
+# build products
+build/
+*.[oa]
+
+# Private Keys
+*.pem
+
+# Xcode legacy
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+
+# repositories
+.hg
+.svn
+CVS
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+Packages/
+Package.pins
+.build/
+
+
+# Cocoapods
+Pods/
+
+
+# Carthage
+Carthage/Checkouts
+Carthage/Build
+Carthage/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+iOSInjectionProject/
+
+# DS_Store banished
+.DS_Store
+
+#All .orig files
+*.orig
+
+.vscode/
+buildServer.json
