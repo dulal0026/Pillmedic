@@ -25,7 +25,8 @@ struct PillmedicApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           // ContentView()
+            MainTabView()
         }
         .modelContainer(sharedModelContainer)
     }

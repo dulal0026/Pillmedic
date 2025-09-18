@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_doctor_dummy.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -29,9 +29,22 @@
 		B4DBE4492E781B6F00E5D465 /* PillmedicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PillmedicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B4BDF7532E7ADD8A00923791 /* Exceptions for "Pillmedic" folder in "Pillmedic" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B4DBE42F2E781B6D00E5D465 /* Pillmedic */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B4DBE4322E781B6D00E5D465 /* Pillmedic */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B4BDF7532E7ADD8A00923791 /* Exceptions for "Pillmedic" folder in "Pillmedic" target */,
+			);
 			path = Pillmedic;
 			sourceTree = "<group>";
 		};
@@ -192,6 +205,7 @@
 			knownRegions = (
 				en,
 				Base,
+				bn,
 			);
 			mainGroup = B4DBE4272E781B6D00E5D465;
 			minimizedProjectReferenceProxies = 1;
@@ -400,6 +414,7 @@
 				DEVELOPMENT_TEAM = 3NJ55M9295;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pillmedic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,6 +444,7 @@
 				DEVELOPMENT_TEAM = 3NJ55M9295;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pillmedic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
