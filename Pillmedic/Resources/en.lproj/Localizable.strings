@@ -10,6 +10,7 @@
 "Add" = "Add";
 "Back" = "Back";
 
+
 //tab
 "Today" = "Today";
 "Progress" = "Progress";
@@ -22,6 +23,23 @@
 "tutorial_title_2" = "Track doctors, family and dose alerts.";
 "tutorial_destription_1" = "Ensure all your doses are neatly arranged and store your medications in one app.";
 "tutorial_destription_2" = "Smart reminder traking every dose for you and your family";
+
+// Login
+"Log into your account" = "Log into your account";
+"Email (Required)" = "Email (Required)";
+"Password (Required)" = "Password (Required)";
+"Sign in" = "Sign in";
+"Don’t have an account?" = "Don’t have an account?";
+"Register" = "Register";
+"Forgot password?" = "Forgot password?";
+
+// Sign up
+"Sign up" = "Sign up";
+"Create account" = "Create account";
+"Terms_Policy_Note" = "By continuing, you agree to our";
+"Terms" = "Terms";
+"Policy" = "Privacy Policy";
+"and" = " & ";
 
 // Doctor
 "Doctor_Name" = "Doctor Name";

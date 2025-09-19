@@ -10,7 +10,9 @@ import SwiftUI
 struct TutorialView: View {
     
     @State private var currentPage = 0
-    
+   // @AppStorage("hasSeenTutorial") var hasSeenTutorial: Bool = false
+    @Binding var showTutorial: Bool
+
     var body: some View {
         VStack {
             TabView(selection: $currentPage) {
@@ -41,14 +43,16 @@ struct TutorialView: View {
             Spacer()
             
             Button {
+                
                 if currentPage < tutorialPages.count - 1 {
                     withAnimation {
                         currentPage += 1
                     }
                 } else {
-                    // TODO: Dismiss tutorial, e.g., set UserDefaults flag
-                    print("Tutorial finished")
+                   // hasSeenTutorial = true
+                    showTutorial = false
                 }
+                
             } label: {
                 Text("Next".localized)
                     .foregroundColor(.white)
@@ -69,7 +73,7 @@ struct TutorialView: View {
 }
 
 #Preview {
-    TutorialView()
+    TutorialView(showTutorial: .constant(false))
 }
 
 struct PageIndicator: View {

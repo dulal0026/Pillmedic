@@ -54,3 +54,5 @@ struct AddMedicineView: View {
 #Preview {
     AddMedicineView(medicineName: "NAPA")
 }
+
+

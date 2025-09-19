@@ -23,10 +23,16 @@ struct PillmedicApp: App {
         }
     }()
 
+   // @AppStorage("hasSeenTutorial") var hasSeenTutorial: Bool = false
+    @State private var showTutorial = true
+
     var body: some Scene {
         WindowGroup {
-           // ContentView()
-            MainTabView()
+            if showTutorial {
+                TutorialView(showTutorial: $showTutorial)
+            } else {
+                MainTabView()
+            }
         }
         .modelContainer(sharedModelContainer)
     }

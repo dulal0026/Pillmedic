@@ -38,6 +38,7 @@ struct AddFamilyView: View {
             
             TextField("Email (Optional)".localized, text: $emailAddress)
                 .padding()
+                .keyboardType(.emailAddress)
                 .background(Color.white)
                 .cornerRadius(12)
                 .overlay(
