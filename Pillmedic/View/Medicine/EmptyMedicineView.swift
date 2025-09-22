@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EmptyMedicineView: View {
     
+    @Binding var path: NavigationPath
+
     var checkList: [MedicineCheckList] = [
         .init(icon: .medicineCheckList1, title: "benefit_medicine_1"),
         .init(icon: .medicineCheckList2, title: "benefit_medicine_2"),
@@ -27,7 +29,7 @@ struct EmptyMedicineView: View {
                 MedicineCheckView(checks: checkList)
                 
                 Button {
-                    print("Add Family Member")
+                    path.append(MedicineRoute.add)
                 } label: {
                     ActionButton(
                         title: "Add_Medicine",
@@ -52,6 +54,8 @@ struct EmptyMedicineView: View {
 }
 
 #Preview {
-    EmptyMedicineView()
+    EmptyMedicineView(
+        path: .constant(NavigationPath())
+    )
 }
 

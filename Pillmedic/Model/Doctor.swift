@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Doctor: Identifiable {
+struct Doctor: Equatable, Hashable, Identifiable {
     
     var id: String {
         return mobileNumber

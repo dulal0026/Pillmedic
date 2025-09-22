@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddFamilyView: View {
-    
+    @Binding var path: NavigationPath
+
     @State var fullName: String = ""
     @State var emailAddress: String = ""
 
@@ -61,10 +62,18 @@ struct AddFamilyView: View {
         }
         .padding(.horizontal, 16)
         .background(.clear)
+        .navigationTitle("Add Family".localized)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarBackButton(path: $path)
+            }
+        }
     }
 }
 
 #Preview {
-    AddFamilyView()
+    AddFamilyView(path: .constant(NavigationPath()))
 }
 

@@ -9,31 +9,43 @@ import SwiftUI
 
 struct FamilyMembersView: View {
    
+    @Binding var path: NavigationPath
 
-    @State var removeEnabled: Bool
+    @State var removeEnabled: Bool = false
 
-    
     var body: some View {
         VStack(alignment: .leading) {
-          
-            familyTopView()
-            
-            LazyVStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading) {
+                familyTopView()
                 
-                ForEach(users) { user in
-                    FamilyItemView(user: user, removeEnabled: $removeEnabled)
+                LazyVStack(alignment: .leading, spacing: 10) {
+                    
+                    ForEach(users) { user in
+                        FamilyItemView(user: user, removeEnabled: $removeEnabled)
+                    }
                 }
+
+                removeAccount()
+
             }
-            
-            removeAccount()
+            .padding(.vertical, 0)
+            .padding(.horizontal, 0)
+          
             Spacer()
         }
-        .padding(.top, 24)
+        .padding(.vertical, 16)
         .padding(.horizontal, 16)
+        .navigationTitle("Family".localized)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarBackButton(path: $path)
+            }
+        }
     }
     
     fileprivate func familyTopView() -> VStack<TupleView<(some View, some View)>> {
-        return VStack {
+        return VStack(spacing: 20) {
             HStack(alignment: .center) {
                 Image(.familyAvatar)
             }
@@ -47,7 +59,7 @@ struct FamilyMembersView: View {
         }
     }
     fileprivate func removeAccount() -> some View {
-        return VStack(alignment: .leading, spacing: 30) {
+        return VStack(alignment: .leading, spacing: 20) {
             
             Button {
                 
@@ -84,7 +96,7 @@ struct FamilyMembersView: View {
                         .font(.manrope(.bold, size: 14))
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, 8)
+                .padding(.top, 0)
                 .background(.clear)
             }
         }
@@ -94,7 +106,10 @@ struct FamilyMembersView: View {
 }
 
 #Preview {
-    FamilyMembersView(removeEnabled: false)
+    FamilyMembersView(
+        path: .constant(NavigationPath()),
+        removeEnabled: false
+    )
 }
 
 struct FamilyItemView: View {
@@ -151,7 +166,7 @@ struct FamilyItemView: View {
                         }
                         if let emailAddress = user.emailAddress {
                             Text(emailAddress)
-                                .foregroundStyle(Color.lightText)
+                                .foregroundStyle(Color.appLightText)
                                 .font(.manrope(.medium, size: 12))
                         }
                         

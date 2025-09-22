@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddDoctorView: View {
     
+    @Binding var path: NavigationPath
+
     @State var doctorName: String = ""
     @State var medicalName: String = ""
     @State var mobileNumber: String = ""
@@ -58,7 +60,6 @@ struct AddDoctorView: View {
                 }
             }
           
-            
             Spacer()
             
             Rectangle()
@@ -94,7 +95,7 @@ struct AddDoctorView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 10) {
                 HStack(alignment: .center) {
                     Image(.doctorAvatar)
                         .resizable()
@@ -102,7 +103,7 @@ struct AddDoctorView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.top, 0)
-                .padding(.bottom, 20)
+                .padding(.bottom, 16)
                
                 Text("Doctor_Name".localized)
                     .font(.manrope(.semiBold, size: 14))
@@ -174,12 +175,16 @@ struct AddDoctorView: View {
                 ActionButton(title: "Add")
             }
         }
-        .padding(.top, 20)
+        .padding(.top, 16)
+        .navigationTitle("Add_Doctor".localized)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarBackButton(path: $path)
+            }
+        }
     }
-}
-
-#Preview {
-    AddDoctorView()
 }
 
 

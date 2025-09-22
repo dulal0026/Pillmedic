@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddMedicineView: View {
-    
+    @Binding var path: NavigationPath
+
     @State var medicineName: String = ""
     
     var body: some View {
@@ -37,7 +38,6 @@ struct AddMedicineView: View {
                 .padding(.bottom, 20)
 
             Button {
-                print("Add medicine")
             } label: {
                 ActionButton(
                     title: "Next",
@@ -48,11 +48,22 @@ struct AddMedicineView: View {
         }
         .padding(.horizontal, 16)
         .background(.clear)
+        .navigationTitle("Add_Medicine".localized)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarBackButton(path: $path)
+            }
+        }
     }
 }
 
 #Preview {
-    AddMedicineView(medicineName: "NAPA")
+    AddMedicineView(
+        path: .constant(NavigationPath()),
+        medicineName: "NAPA"
+    )
 }
 
 

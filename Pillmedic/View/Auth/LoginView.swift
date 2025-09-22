@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @Binding var path: NavigationPath
+
     @State var emailAddress: String = ""
     @State var password: String = ""
     @State var isSecure: Bool = false
@@ -87,7 +89,7 @@ struct LoginView: View {
 
 
 #Preview {
-    LoginView()
+    LoginView(path: .constant(NavigationPath()))
 }
 
 

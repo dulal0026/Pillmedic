@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DoctorListView: View {
-    
+    @Binding var path: NavigationPath
+
     var doctors: [Doctor] =  Doctor.dummyDoctors
     
     var body: some View {
@@ -18,13 +19,14 @@ struct DoctorListView: View {
                 LazyVStack(alignment: .leading, spacing: 12) {
                     
                     ForEach(doctors) { doctor in
-                        DoctorListItemView(doctor: doctor)
+                        DoctorListItemView(path: $path, doctor: doctor)
                     }
                 }
             }
             VStack(alignment: .leading) {
                 Button {
                     print("Add another doctor")
+                    path.append(DoctorRoute.add)
                 } label: {
                     
                     HStack(alignment: .top, spacing: 12) {
@@ -49,15 +51,23 @@ struct DoctorListView: View {
 
             Spacer()
         }
+        .navigationTitle("Doctor".localized)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarBackButton(path: $path)
+            }
+        }
     }
 }
-
+/*
 #Preview {
-    DoctorListView()
+    DoctorListView(path: .constant(DoctorRoute))
 }
-
+*/
 struct DoctorListItemView: View {
-    
+    @Binding var path: NavigationPath
+
     var doctor: Doctor
     
     var icon: ImageResource = .iconDoctorDummy
@@ -78,7 +88,7 @@ struct DoctorListItemView: View {
                             .font(.manrope(.bold, size: 16))
                         
                         Text(doctor.speciality)
-                            .foregroundStyle(Color.lightText)
+                            .foregroundStyle(Color.appLightText)
                             .font(.manrope(.regular, size: 14))
                     }
                 }
@@ -93,6 +103,9 @@ struct DoctorListItemView: View {
                         .frame(height: 20)
                         .tint(Color.appBlue)
                 }
+            }
+            .onTapGesture {
+                path.append(DoctorRoute.details(doctor))
             }
             .padding(8)
             .background(.clear)
@@ -122,7 +135,7 @@ struct DoctorAppointmentItemView: View {
                 VStack(alignment: .leading, spacing: 2) {
                   
                     Text("Next Appointment")
-                        .foregroundStyle(Color.lightText)
+                        .foregroundStyle(Color.appLightText)
                         .font(.manrope(.regular, size: 12))
                     
                     Text(value)

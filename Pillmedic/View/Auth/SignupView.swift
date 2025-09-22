@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignupView: View {
     
+    @Binding var path: NavigationPath
+
     @State var isSecure: Bool = false
 
     @State var fullName: String = ""
@@ -99,5 +101,5 @@ struct SignupView: View {
 }
 
 #Preview {
-    SignupView()
+    SignupView(path: .constant(NavigationPath()))
 }

@@ -10,7 +10,6 @@
 "Add" = "Add";
 "Back" = "Back";
 
-
 //tab
 "Today" = "Today";
 "Progress" = "Progress";
@@ -80,9 +79,32 @@
 "benefit_family_5" = "Health Report Access.";
 "benefit_family_6" = "Permission-based Sharing.";
 
+"Add Family" = "Add Family";
 "Add Family Member" = "Add Family Member";
 "Full name (Required)" = "Full name (Required)";
 "Email (Optional)" = "Email (Optional)";
 "Family Members" = "Family Members";
 "Add Another Account" = "Add Another Account";
 "Remove Account" = "Remove Account";
+
+// Account
+
+"Blood Group" = "Blood Group";
+"Gender" = "Gender";
+"Birthday" = "Birthday";
+"Email" = "Email";
+"Language" = "Language";
+"Notification" = "Notification";
+"Help" = "Help";
+"Privacy policy" = "Privacy policy";
+"Terms & conditions" = "Terms & conditions";
+"Delete account" = "Delete account";
+"Restore Purchases" = "Restore Purchases";
+"Log out" = "Log out";
+"English" = "English";
+"Bangla" = "Bangla";
+
+// Insights
+
+"Insights" = "Insights";
+"Insights_details" = "Try setting more reminders to improve consistency";

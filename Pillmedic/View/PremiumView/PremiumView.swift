@@ -32,7 +32,7 @@ struct PremiumView: View {
         }
         .padding(16)
         .background(
-            LinearGradient(colors: [.lightPink, .lightOrance], startPoint: .leading, endPoint: .trailing)
+            LinearGradient(colors: [.appPink, .lightOrance], startPoint: .leading, endPoint: .trailing)
         )
         .clipShape(
             RoundedRectangle(cornerRadius: 16,

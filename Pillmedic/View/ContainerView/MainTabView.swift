@@ -17,35 +17,35 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             
-            EmptyMedicineView()
+            MedicineRootView()
                 .tabItem {
                     Image(selectedTab == .medicine ? "tab_icon_medicine_selected" : "tab_icon_medicine_normal")
                     Text("Today")
                 }
                 .tag(Tab.medicine)
             
-            DoctorDetailsView(doctor: Doctor.dummyDoctors[0])
+            ProgressView()
                 .tabItem {
                     Image(selectedTab == .progress ? "tab_icon_progress_selected" : "tab_icon_progress_normal")
                     Text("Progress")
                 }
                 .tag(Tab.progress)
             
-            EmptyFamilyView()
+            FamilyRootView()
                 .tabItem {
                     Image(selectedTab == .family ? "tab_icon_family_selected" : "tab_icon_family_normal")
                     Text("Family")
                 }
                 .tag(Tab.family)
             
-            EmptyDoctorView()
+            DoctorsRootView()
                 .tabItem {
                     Image(selectedTab == .doctor ? "tab_icon_doctor_selected" : "tab_icon_doctor_normal")
                     Text("Doctor")
                 }
                 .tag(Tab.doctor)
             
-            AccountView()
+            AccountView(user: users[0])
                 .tabItem {
                     Image(selectedTab == .account ? "tab_icon_account_selected" : "tab_icon_account_normal")
                     Text("Account")

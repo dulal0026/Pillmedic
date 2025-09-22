@@ -23,7 +23,7 @@ struct DoctorAppointmentView: View {
                 VStack(alignment: .leading, spacing: 2) {
                   
                     Text("Next_Appointment")
-                        .foregroundStyle(Color.lightText)
+                        .foregroundStyle(Color.appLightText)
                         .font(.manrope(.regular, size: 12))
                     
                     Text(value)
@@ -60,7 +60,7 @@ struct DoctorInfoItemView: View {
                         .font(.manrope(.bold, size: 16))
                     
                     Text(doctor.speciality)
-                        .foregroundStyle(Color.lightText)
+                        .foregroundStyle(Color.appLightText)
                         .font(.manrope(.regular, size: 14))
                 }
                 Spacer()

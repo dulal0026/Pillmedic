@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DoctorDetailsView: View {
-    
+    @Binding var path: NavigationPath
+
     var doctor: Doctor
     
     var body: some View {
@@ -40,11 +41,19 @@ struct DoctorDetailsView: View {
         }
         .padding(.horizontal,16)
         .padding(.top, 24)
+        .navigationTitle("Doctor_Info".localized)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarBackButton(path: $path)
+            }
+        }
     }
 }
 
 struct DoctorItemView: View {
-    
+
     var icon: ImageResource
     var title: String
 
@@ -60,9 +69,11 @@ struct DoctorItemView: View {
         }
         .padding(.top, 12)
         .padding(.horizontal, 16)
+      
     }
 }
-
+/*
 #Preview {
     DoctorDetailsView(doctor: Doctor.dummyDoctors[0])
 }
+*/

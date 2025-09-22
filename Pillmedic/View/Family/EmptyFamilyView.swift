@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct EmptyFamilyView: View {
-    
+    @Binding var path: NavigationPath
+
     var checkList: [String] = [
         "benefit_family_1",
         "benefit_family_2",
@@ -31,6 +32,7 @@ struct EmptyFamilyView: View {
                 
                 Button {
                     print("Add Family Member")
+                    path.append(FamilyRoute.add)
                 } label: {
                     ActionButton(
                         title: "Add Family Member",
@@ -41,6 +43,8 @@ struct EmptyFamilyView: View {
                 
                 Button {
                     print("Add Premium")
+                    path.append(FamilyRoute.list)
+
                 } label: {
                     PremiumView()
                 }
@@ -55,7 +59,7 @@ struct EmptyFamilyView: View {
 }
 
 #Preview {
-    EmptyFamilyView()
+    EmptyFamilyView(path: .constant(NavigationPath()))
 }
 
 struct EmptyTopDataView: View {

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct EmptyDoctorView: View {
-    
+    @Binding var path: NavigationPath
+
     var checkList: [String] = [
         "benefit1",
         "benefit2",
@@ -20,7 +21,7 @@ struct EmptyDoctorView: View {
   
     var body: some View {
         VStack(alignment: .leading) {
-            VStack(alignment: .center, spacing: 20) {
+            VStack(alignment: .center, spacing: 18) {
                 EmptyTopDataView(
                     icon: .doctorAvatar,
                     title: "Benefits_of_add_doctor"
@@ -29,6 +30,7 @@ struct EmptyDoctorView: View {
 
                 Button {
                     print("Add_Doctor")
+                    path.append(DoctorRoute.add)
                 } label: {
                     ActionButton(
                         title: "Add_Doctor",
@@ -38,7 +40,8 @@ struct EmptyDoctorView: View {
                 }
                 
                 Button {
-                    print("Add Doctor")
+                    path.append(DoctorRoute.list)
+
                 } label: {
                     PremiumView()
                 }
@@ -52,6 +55,4 @@ struct EmptyDoctorView: View {
     }
 }
 
-#Preview {
-    EmptyDoctorView()
-}
+
