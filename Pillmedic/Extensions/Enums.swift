@@ -134,3 +134,73 @@ enum AccountMenu: String, CaseIterable, Identifiable {
 }
 
 
+enum MealNote: String, CaseIterable, Identifiable, Hashable {
+    case before = "Before meal"
+    case after = "After meal"
+    case notSpecific = "Not specific"
+    
+    var id: String { self.rawValue }
+}
+
+
+enum MedicineTakenAction: String, CaseIterable, Identifiable, Hashable {
+    
+    var id: String {
+        self.rawValue
+    }
+
+    case taken = "Taken"
+    case lateTaken = "Late taken"
+    case missed = "Missed"
+    
+    var title: String {
+        rawValue
+    }
+    
+    
+    var forgroundColor: Color {
+        switch self {
+        case .taken:
+            Color.takenForground
+        case .lateTaken:
+            Color.lateTakenForground
+        case .missed:
+            Color.missedForground
+        }
+    }
+    
+    var backgroundColor: Color {
+        switch self {
+        case .taken:
+            Color.takenBackground
+        case .lateTaken:
+            Color.lateTakenBackground
+        case .missed:
+            Color.missedBackground
+        }
+    }
+    
+    var icon: ImageResource {
+        switch self {
+        case .taken:
+                .iconTaken
+        case .lateTaken:
+                .iconLateTaken
+        case .missed:
+                .iconMissed
+        }
+    }
+}
+
+
+enum ActivityType: String, CaseIterable, Identifiable, Hashable {
+    var id: String {
+        self.rawValue
+    }
+    case weekly = "Weekly"
+    case monthly = "Monthly"
+    
+    var title: String {
+        rawValue
+    }
+}

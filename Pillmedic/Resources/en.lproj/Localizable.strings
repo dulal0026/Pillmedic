@@ -9,6 +9,8 @@
 // common
 "Add" = "Add";
 "Back" = "Back";
+"Skip" = "Skip";
+"Done" = "Done";
 
 //tab
 "Today" = "Today";
@@ -61,14 +63,38 @@
 "benefit6" = "Better Elderly Care & more.";
 
 // Medicine
+
 "Benefits_of_add_medicine" = "Set up meds";
 "benefit_medicine_1" = "Never lose track—add your meds in one spot.";
 "benefit_medicine_2" = "Set a schedule & get reminders.";
 "benefit_medicine_3" = "Your med info is encrypted & only accessible with your permission.";
 
+"Medicine" = "Medicine";
 "Add_Medicine" = "Add a Medicine";
 "Medicine_Name" = "Medicine Name";
 "Enter_medicine_name" = "Enter medicine name";
+
+
+"Set a Schedule" = "Set a Schedule";
+"When will you take? " = "When will you take? ";
+"Duration" = "Duration";
+"Not specific" = "Not specific";
+"Before meal" = "Before meal";
+"After meal" = "After meal";
+"Dose" = "Dose";
+"Everyday" = "Everyday";
+"Add Notes" = "Add Notes";
+"Add Time" = "Add Time";
+"Add Medicine" = "Add Medicine";
+"Taken all" = "Taken all";
+"Not Taken" = "Not Taken";
+"Delete Medicine" = "Delete Medicine";
+"Missed" = "Missed";
+"Taken" = "Taken";
+"Late taken" = "Late taken";
+"Weekly" = "Weekly";
+"Monthly" = "Monthly";
+
 
 // Family
 "Benefits_of_add_family" = "Benefits of adding a family member";

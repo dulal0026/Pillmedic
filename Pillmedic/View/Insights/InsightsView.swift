@@ -11,27 +11,18 @@ struct InsightsView: View {
     var body: some View {
         VStack(alignment: .leading) {
               
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 16) {
                 
-                Text("Insights".localized)
-                    .foregroundStyle(Color.white)
-                    .font(.manrope(.bold, size: 20))
+                HStack(alignment: .center) {
+                    Text("Insights".localized)
+                        .foregroundStyle(Color.white)
+                        .font(.manrope(.bold, size: 20))
+                    Spacer()
+                }
                 
-                HStack(alignment: .top, spacing: 10) {
+                HStack(alignment: .center, spacing: 10) {
                     
-                    ZStack(alignment: .center) {
-                        Circle()
-                            .stroke(Color.white, lineWidth: 3)
-                            .frame(width: 22, height: 22)
-                        
-                        Circle()
-                            .stroke(Color.white, lineWidth: 3)
-                            .frame(width: 14, height: 14)
-                        
-                        Circle()
-                            .stroke(Color.white, lineWidth: 3)
-                            .frame(width: 6, height: 8)
-                    }
+                    CirclesView()
                     
                     Text("Insights_details".localized)
                         .font(.manrope(.medium, size: 14))
@@ -44,16 +35,35 @@ struct InsightsView: View {
 
             .background(Color.clear)
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 0)
+        .frame(maxWidth: .infinity)
         .background(
             LinearGradient(colors: [.deepBlue, .lightPurple], startPoint: .leading, endPoint: .trailing)
         )
         .clipShape(
-            RoundedRectangle(cornerRadius: 16,
-                             style: .continuous)
+            RoundedRectangle(cornerRadius: 16)
         )
     }
 }
+
+struct CirclesView: View {
+    var body: some View {
+        ZStack(alignment: .center) {
+            Circle()
+                .stroke(Color.white, lineWidth: 3)
+                .frame(width: 22, height: 22)
+            
+            Circle()
+                .stroke(Color.white, lineWidth: 3)
+                .frame(width: 14, height: 14)
+            
+            Circle()
+                .stroke(Color.white, lineWidth: 3)
+                .frame(width: 6, height: 8)
+        }
+    }
+}
+
 /*
 #Preview {
     InsightsView()

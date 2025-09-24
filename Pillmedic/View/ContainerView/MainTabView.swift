@@ -24,7 +24,7 @@ struct MainTabView: View {
                 }
                 .tag(Tab.medicine)
             
-            ProgressView()
+            ProgressRootView()
                 .tabItem {
                     Image(selectedTab == .progress ? "tab_icon_progress_selected" : "tab_icon_progress_normal")
                     Text("Progress")

@@ -14,9 +14,8 @@ enum MedicineRoute: Hashable {
    // case edit(String)
 }
 
-enum ProgressRoute {
-    case root
-    case details(String)
+enum ProgressRoute: Hashable {
+    case details(Medicine)
 }
 
 enum DoctorRoute: Hashable {

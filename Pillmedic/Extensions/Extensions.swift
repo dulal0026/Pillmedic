@@ -39,3 +39,19 @@ struct LocalizedText: View {
         Text(LocalizedStringKey(key))
     }
 }
+
+
+extension Date {
+    func startOfMonth(using calendar: Calendar = .current) -> Date {
+        let components = calendar.dateComponents([.year, .month], from: self)
+        return calendar.date(from: components)!
+    }
+    
+    func daysInMonth(using calendar: Calendar = .current) -> [Date] {
+        let range = calendar.range(of: .day, in: .month, for: self)!
+        let start = startOfMonth(using: calendar)
+        return range.compactMap { day -> Date? in
+            calendar.date(byAdding: .day, value: day - 1, to: start)
+        }
+    }
+}

@@ -1,3 +1,5 @@
+import UIKit
+
 let medicines: [Medicine] = [
     Medicine(
         name: "Napa 1",
@@ -15,7 +17,7 @@ let medicines: [Medicine] = [
         mealNote: .after,
         doseTimes: [Date(), Date()],
         startDate: Date(),
-        notes: "Drink more water"
+        notes: "Stay hydrated by sipping water throughout the day! Aim for at least eight glasses to keep your body energized and your skin glowing. Remember, hydration is key to feeling your best!"
     ),
     Medicine(
         name: "Napa 3",
@@ -33,7 +35,7 @@ let medicines: [Medicine] = [
         mealNote: .notSpecific,
         doseTimes: [Date(), Date(), Date()],
         startDate: Date(),
-        notes: "No spicy food"
+        notes: "Stay hydrated by sipping water throughout the day! Aim for at least eight glasses to keep your body energized and your skin glowing. Remember, hydration is key to feeling your best!"
     ),
     Medicine(
         name: "Amoxicillin 5",
@@ -43,7 +45,7 @@ let medicines: [Medicine] = [
         doseTimes: [Date(), Date(), Date()],
         startDate: Date(),
         notes: "Drink more water"
-    ),
+    )/*,
     Medicine(
         name: "Ibuprofen 6",
         totalDays: "13 days",
@@ -898,5 +900,5 @@ let medicines: [Medicine] = [
         doseTimes: [Date()],
         startDate: Date(),
         notes: "Drink more water"
-    )
+    )*/
 ]

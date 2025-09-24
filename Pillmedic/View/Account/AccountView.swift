@@ -103,6 +103,7 @@ struct AccountView: View {
                         print("Insight")
                     } label: {
                         InsightsView()
+                            .padding(.horizontal, 16)
                     }
                 }
                 .background(.red.opacity(0))

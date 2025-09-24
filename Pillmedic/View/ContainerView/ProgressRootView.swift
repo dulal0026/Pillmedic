@@ -8,10 +8,29 @@
 import SwiftUI
 
 struct ProgressRootView: View {
+    @State private var path = NavigationPath()
+
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $path) {
+            VStack {
+                ProgressView(path: $path)
+            }
+            .navigationTitle("Medicine".localized)
+            .navigationDestination(for: ProgressRoute.self) { dRoute in
+                switch dRoute {
+                case .details(let medicine):
+                    ProgressDetailsView(
+                        path: $path,
+                        activityType: .weekly,
+                        medicine: medicine
+                    )
+                }
+            }
+        }
     }
 }
+
 
 #Preview {
     ProgressRootView()
