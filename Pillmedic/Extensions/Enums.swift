@@ -135,11 +135,16 @@ enum AccountMenu: String, CaseIterable, Identifiable {
 
 
 enum MealNote: String, CaseIterable, Identifiable, Hashable {
+   
+    case notSpecific = "Not specific"
     case before = "Before meal"
     case after = "After meal"
-    case notSpecific = "Not specific"
     
     var id: String { self.rawValue }
+    
+    var title: String {
+        rawValue
+    }
 }
 
 

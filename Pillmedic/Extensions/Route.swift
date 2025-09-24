@@ -10,8 +10,9 @@ import SwiftUI
 enum MedicineRoute: Hashable {
    // case list
     case add
-   // case addSchedule
-   // case edit(String)
+    case addSchedule
+    case details(Medicine)
+    case edit(Medicine)
 }
 
 enum ProgressRoute: Hashable {

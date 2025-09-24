@@ -24,12 +24,25 @@ struct MedicineRootView: View {
                 switch dRoute {
                 case .add:
                     AddMedicineView(path: $path)
+                case .addSchedule:
+                    SetScheduleView(
+                        path: $path,
+                        mealNote: .notSpecific)
+                case .details(let medicine):
+                    MedicineDetailsView(
+                        path: $path,
+                        medicine: medicine)
+                case .edit(let medicine):
+                    MedicineEditView(
+                        path: $path,
+                        medicine: medicine,
+                        mealNote: MealNote.notSpecific
+                    )
                 }
             }
         }
     }
 }
-
 
 #Preview {
     MedicineRootView()

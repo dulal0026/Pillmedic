@@ -76,7 +76,7 @@
 
 
 "Set a Schedule" = "Set a Schedule";
-"When will you take? " = "When will you take? ";
+"When will you take?" = "When will you take? ";
 "Duration" = "Duration";
 "Not specific" = "Not specific";
 "Before meal" = "Before meal";
@@ -89,6 +89,7 @@
 "Taken all" = "Taken all";
 "Not Taken" = "Not Taken";
 "Delete Medicine" = "Delete Medicine";
+"Edit Medicine" = "Edit Medicine";
 "Missed" = "Missed";
 "Taken" = "Taken";
 "Late taken" = "Late taken";

@@ -38,6 +38,7 @@ struct AddMedicineView: View {
                 .padding(.bottom, 20)
 
             Button {
+                path.append(MedicineRoute.addSchedule)
             } label: {
                 ActionButton(
                     title: "Next",
